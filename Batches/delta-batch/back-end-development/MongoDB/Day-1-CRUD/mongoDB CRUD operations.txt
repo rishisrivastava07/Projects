@@ -1,0 +1,474 @@
+
+college> show collections
+
+college> db.student.insertOne({
+... name: "adam",
+... marks: 79
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId('658065b8f83df03af3cb8a02')
+}
+college> show collections
+student
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  }
+]
+college> db.student.insertOne({ name: "bob", age : 19, marks: 79 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('65806639f83df03af3cb8a03')
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  }
+]
+college> db.student.insertOne({ name: "eve", city : "delhi", marks: 79 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('65806671f83df03af3cb8a04')
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  }
+]
+college> db.student.find({city: "delhi"})
+[
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  }
+]
+college> db.student.insertMany([{ name: "motu", city : "kolkata", marks: 75}, {name: "catyln", marks: 77, city: "mumbai"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('658067cff83df03af3cb8a05'),
+    '1': ObjectId('658067cff83df03af3cb8a06')
+  }
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a05'),
+    name: 'motu',
+    city: 'kolkata',
+    marks: 75
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  }
+
+college> db.student.find({marks : {$gt: 75}})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  }
+]
+college> db.student.find({marks : {$gte: 75}})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a05'),
+    name: 'motu',
+    city: 'kolkata',
+    marks: 75
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  }
+]
+college> db.student.find({marks : {$eq: 75}})
+[
+  {
+    _id: ObjectId('658067cff83df03af3cb8a05'),
+    name: 'motu',
+    city: 'kolkata',
+    marks: 75
+  }
+]
+college> db.student.find({city : {$in : "delhi"}})
+MongoServerError: $in needs an array
+college> db.student.find({city : {$in : ["delhi"]}})
+[
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'delhi',
+    marks: 54
+  }
+]
+college> db.student.find({city : {$in : ["delhi","mumbai"]}})
+[
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'delhi',
+    marks: 54
+  }
+]
+college> db.student.find({$or: [{marks : {$gt : 75}}, {city: "delhi"}]})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'delhi',
+    marks: 54
+  }
+]
+college> db.student.updateOne({marks: 79},{$set: {marks: 89}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.student.find({$or: [{marks : {$gt : 75}}, {city: "delhi"}]})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 89
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'delhi',
+    marks: 54
+  }
+]
+college> db.student.updateOne({name: "bob"},{city: "pune"})
+MongoInvalidArgumentError: Update document requires atomic operators
+college> db.student.updateOne({name: "bob"},{$set: {city: "pune"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.student.find({$or: [{marks : {$gt : 75}}, {city: "delhi"}]})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 89
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79,
+    city: 'pune'
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'delhi',
+    marks: 54
+  }
+]
+college> db.student.updateMany({city: "delhi"},{$set: {city: "New Delhi"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+college> db.student.find({$or: [{marks : {$gt : 75}}, {city: "delhi"}]})
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 89
+  },
+  {
+    _id: ObjectId('65806639f83df03af3cb8a03'),
+    name: 'bob',
+    age: 19,
+    marks: 79,
+    city: 'pune'
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'New Delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+
+college> db.student.insertOne({})
+{
+  acknowledged: true,
+  insertedId: ObjectId('65806c0cf83df03af3cb8a08')
+}
+college> db.student.insertOne({
+... name: "farah",
+... performance: { marks: 88, grade: 'A'}
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId('65806c3df83df03af3cb8a09')
+}
+college> db.student.findOne({"performance.marks":88})
+{
+  _id: ObjectId('65806c3df83df03af3cb8a09'),
+  name: 'farah',
+  performance: { marks: 88, grade: 'A' }
+}
+college> db.student.deleteOne({state: "West Bengal"})
+{ acknowledged: true, deletedCount: 1 }
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 89
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'New Delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a05'),
+    name: 'motu',
+    city: 'kolkata',
+    marks: 75
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  {
+    _id: ObjectId('658067eef83df03af3cb8a07'),
+    name: 'patlu',
+    city: 'New Delhi',
+    marks: 54
+  },
+  { _id: ObjectId('65806c0cf83df03af3cb8a08') },
+  {
+    _id: ObjectId('65806c3df83df03af3cb8a09'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+college> db.student.deleteMany({marks: {$lt: 75}})
+{ acknowledged: true, deletedCount: 1 }
+college> db.student.find()
+[
+  {
+    _id: ObjectId('658065b8f83df03af3cb8a02'),
+    name: 'adam',
+    marks: 89
+  },
+  {
+    _id: ObjectId('65806671f83df03af3cb8a04'),
+    name: 'eve',
+    city: 'New Delhi',
+    marks: 79
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a05'),
+    name: 'motu',
+    city: 'kolkata',
+    marks: 75
+  },
+  {
+    _id: ObjectId('658067cff83df03af3cb8a06'),
+    name: 'catyln',
+    marks: 77,
+    city: 'mumbai'
+  },
+  { _id: ObjectId('65806c0cf83df03af3cb8a08') },
+  {
+    _id: ObjectId('65806c3df83df03af3cb8a09'),
+    name: 'farah',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+college> db.student.deleteMany()
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.deleteMany)
+college> db.student.deleteMany({})
+{ acknowledged: true, deletedCount: 6 }
+college> db.student.find()
+
+college> db.dropDatabase()
+{ ok: 1, dropped: 'college' }
+college> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+college>

@@ -1,0 +1,87 @@
+/* 
+1. Color Property - used to set the color of foreground
+    i. color : purple;
+    ii. color : #ffffff;
+    iii. color: rgb(0,0,0);
+
+2. Background Color Property - Used to set the color of background
+    i. background-color : purple;
+    ii. background-color : #ffffff;
+    iii. background-color : rgb(0,0,0);
+
+3. Color Systems -
+    i. Named colors - each browser recognizes around 140 named colors.
+    ii. Red Green Blue(0-255).
+    iii. Hexadecimal or Hex Code
+*/
+
+/* 
+4. Text Properties
+    i. text-align - left/start; right/end; center; justify; (relative to the parent)
+    ii. font-weight - range (100 to 900) default - 400
+    iii. text-decoration - to set underline, cut on text etc.
+    iv. line-height - controls the height of the line of text
+        a. normal
+        b. 2.5 - means the 2.5 times normal height
+    v. letter-spacing - controls the horizontal spacing behaviour between text characters.
+    vi. font-size - Units -
+      i. Absolute - fixed
+        a. px - 96px = 1 inch (not used for responsive websites)
+        b. pt
+        c. pc
+        d. cm
+        e. mm
+        f. in
+      ii. Relative - not fixed
+        a. %
+        b. em
+        c. rem
+        d. ch
+        e. vh
+        f. vw + many more
+    vii. font-family - specifies a prioritized list of one or more font family names
+*/
+
+/* Implementation */
+/* h1{
+    color: brown;
+}
+p{
+    color: blueviolet;
+}
+button{
+    color: rgb(255, 255, 255);
+    background-color: #ff0000;
+} */
+
+
+/* Implementation of Point 4 */
+h1{
+    text-align: center;
+    text-decoration: wavy red underline;
+    letter-spacing: normal;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h3{
+    text-align: start;
+    text-decoration: pink line-through;
+}
+
+p{
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 15px;;
+}
+
+h2{
+    font-weight: 800;
+    text-decoration: double blue overline;
+    letter-spacing: 10px;
+}
+
+a{
+    text-decoration: none;
+}

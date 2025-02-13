@@ -1,0 +1,11 @@
+<%- include("include/head.ejs") %>
+<body>
+    <!-- Here data came from the data base -->
+    <h1>Dice gave value : <%= diceVal %></h1>
+    <% if(diceVal == 6){ %>
+        <h2>Nice! roll dice again</h2>
+    <% } %>
+    <%- include("include/footer.ejs") %>
+</body>
+</html>
+

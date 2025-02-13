@@ -1,0 +1,108 @@
+/* 
+    Flex Box - Flexible Box Layout - it is a one dimensional layout method for arranging items in rows or columns.
+    It also makes the website responsive.
+
+    Flex Model - 
+        |
+        |
+        |
+        |
+    -------------------------------  Main axis
+        |
+        |
+        |
+        |
+    Cross axis
+*/
+
+/* 
+    display:flex;
+    A. Flex Box Direction - it sets how flex items are placed in the flex container, along which axis and direction. By default it is set in row.
+        a. flexbox-direction: row;              {main axis, left to right}
+        b. flexbox-direction: row-reverse;      {main axis, right to left}
+        c. flexbox-direction: column;           {cross axis, top to bottom}
+        b. flexbox-direction: column-reverse;   {cross axis, bottom to top}
+
+    B. Justify Content - tells how the browser distributes space between and around content items along the main-axis.
+        a. justify-content: flex-start;
+        b. justify-content: flex-end;
+        c. justify-content: center;
+        d. justify-content: space-between; if space left between each item then only this property will work
+        e. justify-content: space-between; it will give 1/2 of the space that is between the items to before start and after end of the items.
+        f. justify-content: space-evenly; it will give exact the space that is between the items to before start and after end of the items.
+
+    C. Flex Wrap - sets whether flex items are forced onto one line or can wrap onto multiple lines.
+        a. flex-wrap: nowrap;
+        b. flex-wrap: wrap;
+        c. flex-wrap: wrap-reverse;
+
+    D. Align Items - Distributes our items along the cross axis. (group)
+        a. align-items: flex-start;
+        b. align-items: flex-end;
+        c. align-items: center;
+
+    E. Align Content - it sets the distribution of space between and around content items along a flexbox's cross-axis.
+        a. align-content: flex-start/flex-end/center;
+        b. align-content: space-between/space-around/evenly.;
+        c. align-content: baseline;
+
+    F. Align Self - aligns an items along the cross-axis. (individual)
+        a. align-self: flex-start;
+        b. align-self: flex-end;
+        c. align-self: center;
+        d. align-self: baseline;
+
+    G. Flex sizing - 
+        a. flex-basis - it sets the initial main size of a flex item.
+            eg.- flex-basis: 100px; -
+        b. flex-grow - it specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+            eg.- flex-grow: 1; (default)
+        c. flex-shrink (used when overflow condition) - it sets the flex shrink factor of a flex item.
+            eg.- flex-shrink: 1; (default)
+*/
+
+#container{
+    height: 600px;
+    width: 60%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    flex-direction: column;
+    justify-content: flex-start;
+    /* justify-content: space-around; */
+    /* flex-wrap: wrap; */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+    /* align-items: baseline; */
+    /* align-content: center; */
+    align-content: flex-start;
+}
+
+h1{
+    text-align: center;
+}
+
+#orange{
+    /* align-self: flex-start; */
+    /* flex-grow: 1; */
+    /* flex-basis: 50px; */
+    flex-shrink: 1;
+}
+
+#blue{
+    /* flex-basis: 400px; */
+    /* flex-grow: 3; */
+    /* max-width:400px */
+    flex-shrink: 2;
+}
+
+#container div{
+    height: 100px;
+    /* width: 300px; */
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}

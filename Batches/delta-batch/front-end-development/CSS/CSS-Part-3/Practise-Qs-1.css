@@ -1,0 +1,29 @@
+#outer-body{
+    border: 2px solid black;
+    height: 200px;
+    width: 70px;
+    background-color: beige;
+}
+#inner-body{
+    border: 2px solid black;
+    margin: 5px;
+    height: 189px;
+    background-color: rgb(255, 255, 255);
+}
+.signals{
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin: 7px 2.5px 4px;
+}
+
+#red{
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}

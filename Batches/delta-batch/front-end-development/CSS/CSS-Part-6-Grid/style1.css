@@ -1,0 +1,218 @@
+/* 
+    CSS Grid - setting a coontainer's display to grid will make all children grid items. 
+
+    grid template - they define the linees & track sizing
+        a. grid-template-rows:
+        b. grid-template-columns:
+    grid gaps - they define the gaps between the lines
+        a. row-gap
+        b. column-gap
+        c. grid-gap: rowGp columnGap
+
+    grid-columns - defines an item's starting & ending position inside the column.
+        a. grid-column-start : line_number
+        b. grid-column-end : line_number
+        c. grid-column : start_col / end_col
+        d. grid-column : start_col / span number
+        
+    grid-rows - defines an item's starting & ending position inside the row.
+        a. grid-row-start : line_number
+        b. grid-row-end : line_number
+        c. grid-row : start_row / end_row
+        d. grid-row : start_row / span number  
+        
+    Alignment properties - 
+        a. horizontally -
+            i. justify-items - container
+            ii. justify-self - item
+        b. vertically -
+            i. align-items - container
+            ii. align-self - item
+        c. 
+            i. place-items -
+            ii. place-self -
+*/
+
+.container{
+    width: 600px;
+    height: 300px;
+    background-color: yellow;
+    display: grid;
+    /* grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-template-columns: 200px 200px 200px; */
+    /* grid-template-columns: auto auto auto; */
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
+    /* row-gap: 10px;
+    column-gap: 10px; */
+    grid-gap: 10px 10px;
+    
+    justify-items: start;
+}
+
+/* .item{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: greenyellow;
+    border: 2px solid black;
+} */
+
+#one{
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* grid-column: 1/3; */
+    grid-column: 1/span 2;
+    justify-self: end;
+}
+
+#two{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /* grid-row: 1/4; */
+    /* grid-row: 1/span 3; */
+}
+
+/* 
+    CSS Animations - To animate CSS Elements
+
+    @keyframes myName{
+        from {font-size : 20px; }
+        to { font-size : 40px }
+    }
+
+    a. animation-name
+    b. animation-duration
+    c. animation-timing-function
+    d. animation-delay
+    e. animation-iteration-count
+    f. animation-direction
+
+    animation: myName 2s linear 3s infinite normal;
+
+
+    @keyframes myName{
+        0%{font-size:20px}
+        50%{font-size:40px}
+        100%{font-size:60px}
+    }
+*/
+
+/* .box{
+    height: 100px;
+    width: 300px;
+    background-color: pink;
+
+    animation-name: colorAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    animation: widthAnimation 3s ease-out 0s infinite alternate;
+} */
+
+/* Its only a blue print */
+/* 
+    @keyframes mulitpleAnimation{
+        from{
+            font-size: 20px;
+            background-color: pink;
+        }
+        to{
+            font-size: 40px;
+            background: blue;
+        }
+    }
+    @keyframes widthAnimation{
+        0%{
+            width: 20px;
+        }
+        50%{
+            width: 100px;
+        }
+        100%{
+            width: 200px;
+        }
+    } 
+*/  
+/*  
+    Media Queries - Help create a responsive website
+    a. media features - width(of viewport) -
+        @media(width:400px){
+            div{
+                background-color: red;
+            }
+        }
+    b. 
+*/
+/* h1{
+    background-color: yellow;
+    border: 2px solid black;
+} */
+
+/* @media(width:400px){
+    h1{
+        background-color: red;
+    }
+    div{
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+    }
+}
+
+@media(min-width: 700px){
+    h1{
+        background-color: red;
+    }
+}
+
+@media(max-width: 200px){
+    h1{
+        background-color: pink;
+    }
+}
+
+@media(min-width: 200px) and (max-width: 300px){
+    h1{
+        background-color: magenta;
+    }
+}
+
+@media(orientation: landscape){
+    h1{
+        background-color: aqua;
+        color: brown; 
+    }
+} */
+
+/* 
+    z-index: it decides the stack level of elements
+    overlapping elements with a larger z index cover those with a smaller one.
+
+    note - if any position of div element is static or default it cannot be set for z-index
+
+    z-index : auto(0);  - by default
+    z-index : 1/2/..
+    z-index : -1/-2/..
+*/
+.box{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: pink;
+}
+
+.one{
+    background-color: aquamarine;
+    position: relative;
+    z-index: 1;
+}
+.two{
+    background-color: darksalmon;
+    position: relative;
+    bottom: 50px;
+    z-index: -2;
+}

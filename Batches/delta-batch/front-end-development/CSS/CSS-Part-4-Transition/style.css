@@ -1,0 +1,172 @@
+/* 
+    Alpha Channel - sets the opacity for the color.
+    it ranges from 0 to 1 in normal decimal format
+    it ranges from 00 to ff in hexadecimal format
+    eg.- rgba(255,0,0,1);
+    or, #ff00008b in which last two charaacter represents the alpha character of the color.
+
+    Opacity - sets the opacity for the element.
+    ranges from 0 to 1
+*/
+/* div{
+    height: 200px;
+    width: 200px;
+    background-color: #ff0000ff;
+
+}
+
+#opacity{
+    background-color: #ffa511;
+    opacity: 0.5;
+} */
+
+/* 
+    CSS Transitions - transitions enable you to define the transition between two states of an element. 
+    Transition Shorthand - property name | duration | timing-function | delay
+    eg.- transition: margin-top 2s ease-in-out 0.2s;
+*/
+/* initial state */
+/* div{
+    height: 200px;
+    width: 200px;
+    background-color: #4dff00ff;
+    margin: 0 auto;
+    margin-top: 10px;
+    transition: margin-top 2s ease-in 0.2s;
+} */
+/* while hover */
+/* div:hover{
+    margin-top: 400px;
+    background-color: pink;
+} */
+
+/* 
+    CSS Transform - This property lets you rotate,scale,skew or translate an element.
+    i. Rotate - transform: rotate(45deg);
+    ii. Scale - transform: scale(0.5);  
+    iii. Translate - trnasform: translate(50px,50px); 
+    iv. Skew - 
+*/
+/* 
+section{
+    margin-top: 100px;
+}
+div{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #7aa874;
+    border: 2px solid black;
+    margin: 10px auto;
+}
+
+div:nth-of-type(2n){
+    background-color: #f7db6a;
+}
+
+div:nth-of-type(3n){
+    background-color: #ebb02d;
+} */
+
+/* tranform */
+/* #one{
+    transform: rotate(135deg);
+}
+#two{
+    transform: scale(2);
+    transform:scale(0.5,2);
+    transform: scaleX(2);
+}
+#three{
+    transform:translate(100px);
+}
+#four{
+    transform: skew(45deg);
+}
+#five{
+    transform: rotate(30deg) translateX(150px);
+} */
+
+/* 
+    Box Shadow - it adds shadow effects around an element's frame 
+    box-shadow: 2px 2px 10px green;
+    X-offset - shadow will be how much from element along x direction.
+    Y-offset - shadow will be how much from element along y direction.
+    blur radius - blurness
+    color - color of shadow
+*/
+
+/* #shadow{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: #7aa874;
+    margin: 10px auto;
+    box-shadow: 2px 2px 8px purple;
+} */
+
+/* 
+    Background Image - set an image as a background
+    background-image: url("../somepath/..img.jpg");
+    background-size: contain / cover / auto;
+
+*/
+
+/* div{
+    width: 800px;
+    height: 600px;
+    background-color: #7aa874;
+    margin: 10px auto;
+    background-image: url("./resources/bg-image.jpg");
+    background-size:cover;
+} */
+
+/* 
+    Position Property - this position property sets how an element is positioned in a document.
+    The top, right, bottom and left properties determine the final location of positioned elements.
+    a. static - the top, right, bottom, left and z-index properties have no effect. This is the default value.
+    b. relative - the offset is relative to itself based on the values of top, right, bottom and left.
+    c. absolute - the element is removed from the normal document flow and no space is creeated for the element in the page layout.
+    It is positioned relative to its closest positioned ancrstor, if any; otherwise, it is placed relative to the initial containing block.
+    d. fixed - The element os removed from the normal document flow, and no space is created for the element in the page layout.
+    It is positioned relative to the initial containing block established by the viewport.
+*/
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    text-align: center;
+    border: 3px solid black;
+    margin: 20px;
+    display: inline-block;
+}
+
+#static{
+    background-color: yellow;
+    position: static;
+    top: 100px;
+    left: 100px;
+}
+
+#relative{
+    background-color: yellow;
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+
+#absolute{
+    background-color: yellow;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#fixed{
+    background-color: yellow;
+    position: fixed;
+    left: 100px;
+    top: 100px;
+}
+

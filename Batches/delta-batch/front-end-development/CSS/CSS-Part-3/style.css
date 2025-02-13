@@ -1,0 +1,76 @@
+/* 
+Box Model CSS -  
+ _____________________                _____________________
+|                     |              |                     |
+|     ___________     |              |     ___________     |
+|    |<- width ->|he  |   margin     |    |<- width ->|he  |
+|    |           |i   |<------------>|    |           |i   |
+|    |contentarea|g   |              |    |contentarea|g   |
+|    |___________|ht  |              |    |___________|ht  |
+|       Padding       |              |       Padding       |
+|_____________________|              |_____________________|
+        Border                                Border
+*/
+
+/* 
+1. Height - by default it sets the content area height of the element
+2. Width - by default it sets the content area width of the element
+3. Border - used to set an element's border
+    a. border-width
+    b. border-style
+    c. border-color
+    d. border-radius
+4. Padding - 
+    a. for all 4 sides
+        eg. - padding: 50px;
+    b. top & bottom | left & right
+        eg. - padding: 1px 2px;
+    c. top | left & right | bottom
+        eg. - padding: 1px 2px 3px;
+    d. top | right | bottom | left
+        eg. - padding: 1px 2px 3px 4px; (clockwise)
+5. Margin - 
+    a. margin-left:
+    b. margin-right:
+    c. margin-top:
+    d. margin-bottom:
+eg. - 
+    div{
+        height: 100px;
+        width: 300px;
+        border-radius: 2px;
+    }
+6. Display - it sets whether an element is treated as a block or inline element and the layout used for its childern.
+    a. display: inline;
+    b. display: block;
+*/
+div{
+    height: 200px;
+    width: 500px;
+    background-color: aqua;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    border: 5px solid black;
+    /* border-radius: 20px; */
+    border-top-right-radius: 20px;
+    padding: 25px;
+    /* margin-bottom: 10px; */
+    margin: 10px 20px 30px;
+}
+
+h1{
+    /* border-width: 2px;
+    border-style: dotted;
+    border-color: black; */
+    border: 2px dashed  black;
+}
+
+button{
+    border: 2px solid black;
+    border-radius: 10px;
+    /* padding-left: 25px;
+    padding-right: 25px; */
+    padding: 10px 20px;
+    background-color: aquamarine;
+}

@@ -1,0 +1,71 @@
+/* 
+display: inline-block;
+This will make the element style like a block and behave like inline
+*/
+
+/* div{
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    border: 2px solid black;
+    margin: 5px;
+    display: inline-block;
+} */
+/* display: none - is used to hide element */
+/* #third{
+    display: none;
+} */
+
+/* Relative units 
+    a. percentage - (%) - it is often used to define a size as relative to an element's parent object.
+    b. em - font size of the parent in the case of typgraphical properties like font-size, and font size of the element itself, in the case of other properties like width.
+*/
+
+/* h1{
+    border: 2px solid black;
+    width: 33%;
+} */
+/* #outer{
+    height: 400px;
+    width: 400px;
+    background-color: pink;
+    margin: 50px;
+    font-size: 20px;
+} */
+
+/* 
+    Padding of the inner div is relative to its font size 
+    It sets relative to the element not parent
+*/
+/* #inner{
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+    margin: 10%;
+    font-size: 0.5em;
+    padding: 1em;
+} */
+
+/* button{
+    font-size: 50px;
+    border-radius: 1em;
+    border: 5px solid green;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+} */
+
+/* 
+    Drawbacks of em - snowball effects in nested elements.
+
+    To overcome this effect we use rem "root em".
+    relative to font size of the root element.
+*/
+section{
+    font-size: 15px;
+}
+div{
+    /* font-size: 2em; */
+    /* font-size: 0.5em; */
+    font-size: 2rem;
+    font-size: 0.5r em;
+}

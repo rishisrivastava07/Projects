@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Bootstrap</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    />
+    <!-- Style sheet must be added after the bootstrap link because we want to override the styling of default bootstrap styling. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        Bootstrap is a powerful, feature-packed frontend toolkit. Build anything -from prototype to production-in minutes. 
+    
+        Benefits of Bootstrap - 
+            a. Makes Development Faster & Easier
+            b. Good choice of pre-built components.
+            c. Good Browser Compatibility.
+
+        Components - pre-built and reusable piece of user interface (UI). eg. - button, forms.
+        Layouts - overall structure and arrangement of the elements. eg. - container, grid.
+    -->
+    <!-- <button>Click Me</button>
+    <button class="btn btn-success">Click Me</button> -->
+
+    <!-- <nav class="navbar bg-body-tertiary navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Brand Name</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Contact  Us</a>
+                </div>
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <img src="bg-image.jpg" class="card-img-top" alt="img">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <h2>Bootstrap Demo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia unde similique explicabo cupiditate aut voluptatum aspernatur distinctio repellendus labore! Quia enim odit nesciunt et ut qui reprehenderit ullam tenetur!
+        Pariatur vel voluptatum doloribus iste, quam odit sed ducimus ad enim corrupti officiis iure aliquam vero beatae? Velit quibusdam nulla amet laudantium asperiores! Repudiandae eaque recusandae autem. Porro, repellendus saepe.
+        Eius a, dolorum iure rerum sunt, explicabo similique aliquid rem asperiores dignissimos minus at ipsa nostrum. Est commodi illo consequuntur, perspiciatis ab veritatis, asperiores sequi ea ducimus quo saepe pariatur?
+        Consequuntur voluptates cupiditate possimus dolorum quas temporibus deserunt odit accusamus laudantium. Quisquam placeat exercitationem laborum ab! Soluta eligendi quidem velit modi sint culpa nobis consectetur magnam atque! Obcaecati, consectetur nemo.
+        Sequi molestias sed quasi ipsam. Aspernatur veniam ea, minus voluptatibus totam quidem saepe nemo officia ipsum blanditiis esse ullam praesentium excepturi debitis molestias rem molestiae quam illo itaque reprehenderit laudantium.</p>
+        <button class="btn btn-danger">btn-one</button>
+        <button class="btn btn-outline-success">btn-two</button>
+        <button class="btn btn-info btn-sm">btn-three</button>
+        <button class="btn btn-warning btn-lg" disabled>btn-four</button>
+        <a href="#" class="btn btn-outline-dark">Google me!</a>
+        <br />
+        <h3>Notifications <span class="badge bg-primary">10+</span></h3>
+        <br />
+        <button class="btn btn-primary">
+            Followers
+            <span class="badge bg-secondary rounded-pill">100+</span>
+        </button>
+        <div class="alert alert-danger alert-dismissible">
+            Download Failed please try again
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary">one</button>
+            <button class="btn btn-success">two</button>
+            <button class="btn btn-warning">three</button>
+        </div>
+        <button class="btn btn-success">one</button>
+        <button class="btn btn-success">two</button>
+        <button class="btn btn-success">three</button>
+
+    </div> -->
+
+    <div class="container">
+        <h2>Grid System</h2>
+        <div class="row">
+            <div class="col-6 bg-success">one</div>
+            <div class="col-2 bg-danger">two</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2 bg-success">one</div>
+            <div class="col-md-8 bg-danger">two</div>
+            <div class="col-md-2 bg-warning">three</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xl-4 bg-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque quis praesentium expedita ex tenetur corporis dolores distinctio, officiis deleniti nisi maxime architecto quasi similique. Hic quasi sunt accusamus reiciendis?</div>
+            <div class="col-md-6 col-xl-4 bg-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nostrum ullam temporibus corrupti dolores deserunt dicta, nisi sed ipsum, numquam neque laudantium veniam nulla odit tempore nemo laborum quis veritatis.</div>
+            <div class="col-md-6 col-xl-4 bg-danger">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus voluptates veritatis cum ipsam accusamus distinctio laudantium ab eos totam incidunt facere sint laboriosam, amet doloremque vel beatae ad eveniet.</div>
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    />
+</body>
+</html>

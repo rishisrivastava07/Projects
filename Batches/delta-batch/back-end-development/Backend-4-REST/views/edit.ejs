@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <h2>Edit your post</h2>
+    <p>Post Id : <%=post.id%> </p>
+    <p>Post Username : @<%=post.username %> </p>
+    <!-- 
+        By default HTML form has two methods - GET & POST
+        To overcome this we have a package in npm module i.e. method-override
+        which converts POST to {DELETE/PATCH/PUT};
+    -->
+    <form method="POST" action="/posts/<%=post.id%>?_method=PATCH">
+        <textarea rows="10" cols="35" name="content"> <%=post.content%></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

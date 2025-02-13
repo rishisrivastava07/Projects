@@ -1,0 +1,16 @@
+{
+  "name": "backend-1-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "math.js",
+  "dependencies": {
+    "figlet": "^1.7.0",
+    "random-words": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rishi",
+  "license": "ISC",
+  "type": "module"
+}

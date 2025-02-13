@@ -1,0 +1,21 @@
+div{
+    background-color: yellow;
+}
+/* 
+Every element tries to inherit from there parent element.
+*/
+form{
+    background-color: red;
+}
+
+/* 
+By default the input and buttons elements doesnot inherit the property from there parent.
+So we need to specifically mention the inherit property to them 
+*/
+input{
+    background-color: inherit;
+}
+
+button{
+    background-color: inherit;
+}

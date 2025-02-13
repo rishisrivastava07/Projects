@@ -1,0 +1,156 @@
+*{
+    font-family: 'Courier New';
+}
+
+h1,h3{
+    color: #b92b27;
+}
+
+#login, #signup{
+    background-color: #2e69ff;
+    color: #ffffff;
+}
+
+.upvote{
+    background-color: gray;
+}
+
+
+/* 
+Descendant Selectors - selects all paragraphs inside divs
+eg.- div p {
+        property: value;
+    } 
+*/
+.post a{
+    color: purple;
+    background-color: yellow; 
+}
+
+/* nav ul li a{
+    color: hotpink;
+} */
+
+nav a{
+    color: hotpink;
+}
+
+/* 
+Adjecent Sibling Combinator
+eg.- Heading3 that comes immediately after any paragraph
+    p+h3{
+        property: value;
+    }
+*/
+p+h3{
+    text-decoration: underline;
+}
+
+/* 
+Child Combinator - selects the immediate child of the parent tag 
+eg.- Selects all buttons which are direct children of spans
+    span > button{
+        property: value;
+    }
+*/
+div > input{
+    background-color: rgb(231, 226, 226);
+}
+
+/* 
+Attribute Selector - selects elements based on the presence or value of a given attribute.
+eg.- input[attr = "value"]{
+        property: value;
+    }
+*/
+input[type="text"]{
+    color: red;
+}
+input[type="password"]{
+    color: green;
+}
+input[type]{
+    background-color: ghostwhite;
+}
+
+/* Practise Qs - 02 */
+/* 
+#myId p{
+    color: green;
+} 
+*/
+
+div[id="myId"] p{
+    color: green;
+}
+
+/* 
+Pseudo Class - A keyword added to a selector that specifies a special state of the selected element(s)
+    a. :hover - while moving the cursor on it can be changed using this property.
+    b. :active - it shows the changes on active state of that element.
+    c. :checked - 
+    d. :nth-of-type
+*/
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+h3:hover{
+    text-decoration: none;
+}
+
+button:active{
+    background-color: darkorchid;
+    color: white;
+}
+
+p:active{
+    font-weight: bold;
+    color: green;
+}
+/* Here it also shows the sibling property if we dont apply + label effects will not be displayed */
+input[type="radio"]:checked + label{
+    font-weight: bold;
+    color: red;
+}
+
+div:nth-of-type(2n){
+    background-color: blanchedalmond;
+}
+
+/* 
+Pseudo Elements - A keyword added to a selector that lets you style a specific part of the selected element(s).
+    a. ::first-letter
+    b. ::first-line
+    c. ::selection
+*/
+
+h1::first-letter{
+    color: black;
+}
+p::first-line{
+    color: rgb(76, 0, 239);
+}
+p::selection{
+    background-color: rgb(241, 241, 110);
+}
+
+/* 
+Cascading Style Sheets - CSS algorithm's job is to select CSS declaration in order to determine the correct values for CSS properties.
+h2{
+    background-color: yellow;
+}
+h2{
+    background-color: blue;
+}
+
+Selector Specificity - is an algorithm that calculates the weight that is applied to a given CSS declaration.
+
+"id" > "class,attribute&pesudo-class"  >  "element&pesudo-element"
+id > class > element
+*/
+
+/* 
+    !important - to show the most specific thinf in document
+*/
